@@ -1,12 +1,14 @@
 import Link from 'next/link';
 export default function Films() {
   return (
-    <div>
+    <article>
       <h1>Films</h1>
-      <Link href={'#feature'}>Feature</Link>
-      <Link href={'#16mm'}>16mm</Link>
-      <Link href={'#shorts'}>Shorts</Link>
-      <Link href={'#musicvideos'}>Music Videos</Link>
+      <nav>
+        <Link href={'#feature'}>Feature</Link>
+        <Link href={'#16mm'}>16mm</Link>
+        <Link href={'#shorts'}>Shorts</Link>
+        <Link href={'#musicvideos'}>Music Videos</Link>
+      </nav>
       <section id="feature">
         <h3>Feature</h3>
         <h4>9 WEEKS</h4>
@@ -94,6 +96,6 @@ export default function Films() {
         <p>CHANTAL SEDER</p>
         <p>BEACH</p>
       </section>
-    </div>
+    </article>
   );
 }

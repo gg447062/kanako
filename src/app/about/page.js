@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div>
+    <article>
       <h1>About</h1>
       <h3>Biography: </h3>
       <p>
@@ -159,6 +159,6 @@ export default function About() {
       <p>Q! Film Festival Jakarta, Indonesia</p>
       <p>11th Annual Brisbane Queer Film Festival, Australia</p>
       <p>20th Melbourne Queer Film Festival, Australia</p>
-    </div>
+    </article>
   );
 }

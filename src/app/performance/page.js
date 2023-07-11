@@ -1,6 +1,6 @@
 export default function Performance() {
   return (
-    <div>
+    <article>
       <h1>Performance</h1>
       <h3>Acting</h3>
       <h4>Beyond Gay</h4>
@@ -15,6 +15,6 @@ export default function Performance() {
       <h4>Transfused</h4>
       <p>2000 USA</p>
       <p>Directed by Freddie Fagula</p>
-    </div>
+    </article>
   );
 }
