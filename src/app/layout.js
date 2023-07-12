@@ -1,8 +1,5 @@
 import './styles/globals.css';
-import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Kanako Pooknyw',
@@ -12,7 +9,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/vmv7kuq.css"
+        ></link>
+      </head>
+      <body>
         <Header></Header>
         <main>{children}</main>
       </body>

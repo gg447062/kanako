@@ -1,15 +1,15 @@
-.images {
+.videos {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: auto;
 }
 
-.images:first-child {
+.videos:first-child {
   top: 0;
   z-index: -15;
 }
 
-.images:last-of-type {
+.videos:last-of-type {
   top: 100vh;
   z-index: -15;
 }

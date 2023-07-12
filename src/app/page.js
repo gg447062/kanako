@@ -1,25 +1,28 @@
 import Canvas from '@/components/Canvas';
 import styles from './styles/home.module.css';
-import Image from 'next/image';
 
 export default function Home() {
   return (
     <article className={styles.article}>
-      <Image
-        className={styles.images}
-        src={'/image20.png'}
-        alt="logo"
+      <video
+        className={styles.videos}
+        src={'/chantal.mp4'}
+        muted
+        autoPlay
+        loop
         width={1200}
         height={800}
-      ></Image>
-      <Image
-        className={styles.images}
-        src={'/image5.png'}
-        alt="logo"
+      ></video>
+      <video
+        className={styles.videos}
+        src={'voyeur.mp4'}
+        muted
+        autoPlay
+        loop
         width={1200}
         height={800}
-      ></Image>
-      <Canvas />
+      ></video>
+      {/* <Canvas /> */}
     </article>
   );
 }

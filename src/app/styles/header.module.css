@@ -1,16 +1,27 @@
 .nav {
+  height: 150px;
+  position: absolute;
+  top: 3em;
+  left: 3em;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 1em;
-  padding: 1em;
+  text-transform: lowercase;
+}
+
+.linkContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .links {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .links:hover {
-  background-color: black;
-  color: white;
+  text-decoration: underline;
+  text-transform: uppercase;
 }

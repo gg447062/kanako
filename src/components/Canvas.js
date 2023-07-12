@@ -7,19 +7,21 @@ export default function Canvas() {
 
   function setup() {
     const canvas = document.getElementById('canvas');
-
-    canvas.height = window.innerHeight * 2;
+    const video = document.querySelector('video');
+    const offset = video.clientHeight - window.innerHeight;
+    canvas.height = window.innerHeight * 2 + offset;
     canvas.width = window.innerWidth;
 
-    setHeight(window.innerHeight);
+    // setHeight(video.clientHeight);
+    setHeight(window.innerHeight + offset);
     setWidth(window.innerWidth);
   }
 
   function draw() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = 'hsl(155, 100%, 22%)';
-    ctx.strokeStyle = 'hsl(20, 100, 0, 0)';
+    ctx.fillStyle = '#669966';
+    ctx.fillStyle = '#99cc99';
 
     // top shape
     ctx.beginPath();

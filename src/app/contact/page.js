@@ -1,11 +1,35 @@
+import styles from '../styles/contact.module.css';
 export default function Contact() {
   return (
-    <article>
-      <h1>Get in touch</h1>
-      <label for>email</label>
-      <input id="email" name="email" type="email"></input>
-      <label for="snail">snail mail</label>
-      <input id="snail" name="snail"></input>
+    <article className={styles.article}>
+      <h1>Contact</h1>
+      <section className={styles.section}>
+        <h3>Email</h3>
+        <p>kanakobird@gmail.com</p>
+      </section>
+      <section className={styles.section}>
+        <h3>Mailing List</h3>
+        <div className={styles.container}>
+          <label className={styles.label} htmlFor="email">
+            email
+          </label>
+          <input
+            className={styles.input}
+            id="email"
+            name="email"
+            type="email"
+          ></input>
+        </div>
+        <div className={styles.container}>
+          <label className={styles.label} htmlFor="snail">
+            snail mail
+          </label>
+          <input className={styles.input} id="snail" name="snail"></input>
+        </div>
+        <div className={styles.container}>
+          <input className={styles.button} type="submit"></input>
+        </div>
+      </section>
     </article>
   );
 }

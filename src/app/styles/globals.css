@@ -1,6 +1,10 @@
 :root {
-  --black: 0, 0, 0;
-  --bg: 360, 100%, 98%;
+  --black: #1d1c1c;
+  --bg: #fff5f5;
+  --green: #669966;
+  --dark-green: #003333;
+  --red: #d01d20;
+  --text: var(--dark-green);
 }
 
 body {
@@ -8,7 +12,12 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: hsl(var(--bg));
+  font-family: ff-nexus-typewriter, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  background-color: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
 }
 
 canvas {
@@ -16,17 +25,25 @@ canvas {
   top: 0;
 }
 
+h1 {
+  font-family: ode, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 5em;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
 a,
 a:visited {
-  color: rgb(var(--black));
+  color: var(--text);
   text-decoration: none;
 }
 
 article {
   padding: 0 3em 3em 3em;
-}
-
-.pageTitle {
-  text-align: center;
-  font-size: 3em;
 }
