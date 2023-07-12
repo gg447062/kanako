@@ -7,12 +7,9 @@ export default function Canvas() {
 
   function setup() {
     const canvas = document.getElementById('canvas');
-    const imageCanvas = document.getElementById('imagecanvas');
 
     canvas.height = window.innerHeight * 2;
     canvas.width = window.innerWidth;
-    imageCanvas.height = window.innerHeight * 2;
-    imageCanvas.width = window.innerWidth;
 
     setHeight(window.innerHeight);
     setWidth(window.innerWidth);
@@ -21,19 +18,6 @@ export default function Canvas() {
   function draw() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    const imageCanvas = document.getElementById('imagecanvas');
-    const imageCtx = imageCanvas.getContext('2d');
-    const image = new Image(width, height);
-    image.src = '/image20.png';
-    image.addEventListener('load', (e) => {
-      imageCtx.drawImage(image, 0, 0, width, height);
-    });
-    const image2 = new Image(width, height);
-    image2.src = '/image5.png';
-    image2.addEventListener('load', (e) => {
-      imageCtx.drawImage(image2, 0, height, width, height);
-    });
-
     ctx.fillStyle = 'hsl(155, 100%, 22%)';
     ctx.strokeStyle = 'hsl(20, 100, 0, 0)';
 
@@ -90,21 +74,11 @@ export default function Canvas() {
     draw();
   });
   return (
-    <div>
-      <canvas
-        id="imagecanvas"
-        height={800}
-        width={1200}
-        style={{ position: 'absolute', zIndex: -10 }}
-        //   style={{ width: `${width}px`, height: `${height}px` }}
-      ></canvas>
-      <canvas
-        id="canvas"
-        height={800}
-        width={1200}
-        style={{ position: 'absolute', zIndex: 0 }}
-        //   style={{ width: `${width}px`, height: `${height}px` }}
-      ></canvas>
-    </div>
+    <canvas
+      id="canvas"
+      height={800}
+      width={1200}
+      style={{ zIndex: -5 }}
+    ></canvas>
   );
 }
