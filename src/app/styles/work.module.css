@@ -6,6 +6,24 @@
   gap: 1em;
 }
 
+.navItem:hover {
+  text-decoration: underline;
+}
+
+.navSelect {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  margin: 3em 0;
+}
+
 .image {
   width: calc(100vw / 3);
   height: auto;
@@ -20,7 +38,15 @@
 
 .list {
   display: flex;
-  gap: 1em;
+  gap: 2em;
   width: 100%;
   overflow-x: scroll;
+}
+
+.actingList {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
