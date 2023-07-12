@@ -2,7 +2,7 @@ export default function About() {
   return (
     <article>
       <h1>About</h1>
-      <h3>Biography: </h3>
+      <h3>Biography</h3>
       <p>
         Kanako Wynkoop was born in 1975, in Sasebo, Nagasaki Prefecture, Japan.
         She moved to the U.S. in 1982. In 1994, Wynkoop moved to Olympia,
