@@ -5,20 +5,11 @@
     "Time": "1 hour 17 min 10 sec",
     "Place": "",
     "Year": "2000",
-    "Image": "",
+    "Image": "/nine_weeks.png",
     "Video": "",
     "Category": "Feature"
   },
-  {
-    "Title": "",
-    "Description": "",
-    "Time": "",
-    "Place": "",
-    "Year": "",
-    "Image": "",
-    "Video": "",
-    "Category": ""
-  },
+
   {
     "Title": "LORI GOLDSTON - SISTERS (An Interpretive Scansion Of The Call To Prayer)",
     "Description": "",
@@ -69,23 +60,14 @@
     "Video": "",
     "Category": "16mm"
   },
-  {
-    "Title": "",
-    "Description": "",
-    "Time": "",
-    "Place": "",
-    "Year": "",
-    "Image": "",
-    "Video": "",
-    "Category": ""
-  },
+
   {
     "Title": "Le Voyeur",
     "Description": "An observational experiment of the Olympia punk underground circa 2010s, loosely focused on Adam Barns, lead singer of GAG.",
     "Time": "16min 43 secs",
     "Place": "Olympia WA, USA",
     "Year": "2020",
-    "Image": "",
+    "Image": "/voyeur.png",
     "Video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lOhLBQkgUC8\" title=\"YouTube video player\" frameborder=\"0\" web-share\" allowfullscreen></iframe>",
     "Category": "Shorts"
   },
@@ -95,7 +77,7 @@
     "Time": "9 min 34 sec",
     "Place": "Olympia WA, USA",
     "Year": "2019",
-    "Image": "",
+    "Image": "/twobeds2.png",
     "Video": "",
     "Category": "Shorts"
   },
@@ -105,17 +87,17 @@
     "Time": "",
     "Place": "Olympia WA, USA",
     "Year": "2011",
-    "Image": "",
+    "Image": "/focus.png",
     "Video": "",
     "Category": "Shorts"
   },
   {
-    "Title": "Augst 2014",
+    "Title": "August 2014",
     "Description": "A time capsule of when it became undeniable to most Americans that the gruesome violence black communities experience at the hands of American law enforcement is excessive and disproportionate to those of white communities. This short film hopes to mark the mass consciousness shift made possible by smart phones allowing millions of people to document their lives and share videos of their lived experiences on the internet.",
     "Time": "7 min 27 sec",
     "Place": "Olympia WA USA",
     "Year": "2014",
-    "Image": "",
+    "Image": "/august.png",
     "Video": "",
     "Category": "Shorts"
   },
@@ -125,7 +107,7 @@
     "Time": "12 min 22 sec",
     "Place": "Olympia WA USA",
     "Year": "",
-    "Image": "",
+    "Image": "/olympia.png",
     "Video": "",
     "Category": "Shorts"
   },
@@ -135,7 +117,7 @@
     "Time": "7 min 22 sec",
     "Place": "Olympia WA, USA",
     "Year": "2010",
-    "Image": "",
+    "Image": "/twobeds.png",
     "Video": "",
     "Category": "Shorts"
   },
@@ -145,7 +127,7 @@
     "Time": "3 min 47 sec",
     "Place": "USA",
     "Year": "",
-    "Image": "",
+    "Image": "/mom.png",
     "Video": "",
     "Category": "Shorts"
   },
@@ -208,5 +190,45 @@
     "Image": "/image18.png",
     "Video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/9S-FyXYXAvQ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
     "Category": "music video"
+  },
+  {
+    "Title": "Beyond Gay",
+    "Description": "Directed by Lynn Shelton",
+    "Time": "",
+    "Place": "USA",
+    "Year": "2009",
+    "Image": "",
+    "Video": "",
+    "Category": "acting"
+  },
+  {
+    "Title": "Five Dollar Cover",
+    "Description": "Directed by Lynn Shelton",
+    "Time": "",
+    "Place": "USA",
+    "Year": "2009",
+    "Image": "",
+    "Video": "",
+    "Category": "acting"
+  },
+  {
+    "Title": "Klute",
+    "Description": "Directed by Dylan Sharp",
+    "Time": "",
+    "Place": "USA",
+    "Year": "2005",
+    "Image": "",
+    "Video": "",
+    "Category": "acting"
+  },
+  {
+    "Title": "Transfused",
+    "Description": "Directed by Freddie Fagula",
+    "Time": "",
+    "Place": "USA",
+    "Year": "2000",
+    "Image": "",
+    "Video": "",
+    "Category": "acting"
   }
 ]
