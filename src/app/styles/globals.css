@@ -1,0 +1,32 @@
+:root {
+  --black: 0, 0, 0;
+  --bg: 360, 100%, 98%;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(var(--bg));
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+}
+
+a,
+a:visited {
+  color: rgb(var(--black));
+  text-decoration: none;
+}
+
+article {
+  padding: 0 3em 3em 3em;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 3em;
+}

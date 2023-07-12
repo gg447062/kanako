@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.image {
+  width: calc(100vw / 3);
+  height: auto;
+}
+
+.title {
+  width: calc(100vw / 3);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  overflow-x: scroll;
+}

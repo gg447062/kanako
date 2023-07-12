@@ -1,0 +1,19 @@
+.images {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.images:first-child {
+  top: 0;
+  z-index: -15;
+}
+
+.images:last-of-type {
+  top: 100vh;
+  z-index: -15;
+}
+
+.article {
+  padding: 0;
+}

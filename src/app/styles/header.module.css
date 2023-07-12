@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+.links {
+  font-size: 2em;
+}
+
+.links:hover {
+  background-color: black;
+  color: white;
+}
