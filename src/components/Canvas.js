@@ -1,80 +1,152 @@
 'use client';
-import { useEffect, useState } from 'react';
+import styles from '../app/styles/home.module.css';
+import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
+
+class Particle {
+  constructor(x, y, directionX, directionY, size, img, ctx) {
+    this.x = x;
+    this.y = y;
+    this.directionX = directionX;
+    this.directionY = directionY;
+    this.img = img;
+    this.ctx = ctx;
+    this.s = size;
+    this.w = 240;
+    this.h = 230;
+  }
+
+  reset(x, y, directionX, directionY, size) {
+    this.x = x;
+    this.y = y;
+    this.directionX = directionX;
+    this.directionY = directionY;
+    this.s = size;
+    this.w = 197;
+    this.h = 293;
+  }
+
+  draw() {
+    this.ctx.save();
+    this.ctx.drawImage(
+      this.img,
+      this.x,
+      this.y,
+      this.w / this.s,
+      this.h / this.s
+    );
+  }
+
+  update() {
+    this.x += this.directionX;
+    if (this.y < -100) {
+      this.directionY *= -1.2;
+    }
+    this.y += this.directionY;
+    this.draw();
+  }
+}
 
 export default function Canvas() {
   const [w, setWidth] = useState(1200);
   const [h, setHeight] = useState(800);
   const [canvas, setCanvas] = useState();
+  const [ctx, setCtx] = useState();
+  const [img, setImg] = useState();
+  const timestamp = useRef(0);
+  const emitted = useRef(0);
+  const maxParticles = 20;
+  let particleArray = [];
+  const deadParticles = [];
 
   function setup() {
     const _canvas = document.getElementById('canvas');
-    const video = document.querySelector('video');
-    const offset = video.clientHeight - window.innerHeight;
-    _canvas.height = window.innerHeight * 2 + offset;
+    _canvas.height = window.innerHeight;
     _canvas.width = window.innerWidth;
-
-    setHeight(window.innerHeight + offset);
+    const _img = document.createElement('img');
+    _img.src = '/tear2.png';
+    setImg(_img);
+    setHeight(window.innerHeight);
     setWidth(window.innerWidth);
     setCanvas(_canvas);
+    setCtx(_canvas.getContext('2d'));
   }
 
-  function draw() {
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#669966';
-    ctx.fillStyle = '#99cc99';
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
 
-    // top shape
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(w, 0);
-    ctx.lineTo(w, h * 0.5);
-    ctx.lineTo(w * 0.88, h * 0.5);
-    ctx.bezierCurveTo(
-      //right
-      w * 0.86,
-      h * 0.44,
-      //left
-      w * 0.82,
-      h * 0.38,
-      w * 0.78,
-      h * 0.46
-    );
-    ctx.bezierCurveTo(w * 0.74, h * 0.4, w * 0.68, h * 0.4, w * 0.68, h * 0.5);
-    ctx.lineTo(w * 0.4, h * 0.5);
-    ctx.bezierCurveTo(w * 0.38, h * 0.32, w * 0.22, h * 0.32, w * 0.2, h * 0.5);
-    ctx.lineTo(0, h * 0.5);
-    ctx.fill();
+  function emitParticles() {
+    const newX = getRandomInt(-2, -20);
+    const newSize = getRandomInt(8, 10);
 
-    //bottom shape
-    ctx.beginPath();
-    ctx.moveTo(0, h * 0.7);
-    ctx.lineTo(w * 0.16, h * 0.7);
-    ctx.quadraticCurveTo(w * 0.3, h, w * 0.34, h * 0.7);
-    ctx.quadraticCurveTo(w * 0.4, h * 0.8, w * 0.42, h * 0.64);
-    ctx.lineTo(w * 0.6, h * 0.6);
-    ctx.quadraticCurveTo(w * 0.65, h * 0.8, w * 0.7, h * 0.6);
-    ctx.quadraticCurveTo(w * 0.75, h * 0.8, w * 0.8, h * 0.6);
-    ctx.lineTo(w, h * 0.5);
-    ctx.lineTo(w, h);
-    ctx.quadraticCurveTo(w * 0.85, h * 1.5, w * 0.6, h * 1.1);
-    ctx.quadraticCurveTo(w * 0.38, h * 2, w * 0.04, h * 1.2);
-    ctx.lineTo(0, h * 1.24);
-    ctx.fill();
+    if (!deadParticles.length) {
+      particleArray.push(
+        new Particle(w - 100, 100, newX, -10, newSize, img, ctx)
+      );
+    } else {
+      const currentDead = deadParticles.pop();
 
-    // bottom right
+      currentDead.reset(w - 100, 100, newX, -10, newSize);
+      particleArray.push(currentDead);
+    }
+  }
 
-    ctx.beginPath();
-    ctx.moveTo(w, h * 2);
-    ctx.lineTo(w * 0.7, h * 2);
-    ctx.quadraticCurveTo(w * 0.74, h * 1.4, w, h * 1.6);
-    ctx.fill();
+  function animate() {
+    timestamp.current++;
+    if (emitted.current < maxParticles && !(timestamp.current % 4)) {
+      emitParticles();
+      emitted.current++;
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < particleArray.length; i++) {
+      const currentParticle = particleArray[i];
+      if (currentParticle.y > canvas.height) {
+        deadParticles.push(currentParticle);
+        particleArray = particleArray
+          .slice(0, i)
+          .concat(particleArray.slice(i + 1));
+      } else {
+        currentParticle.update();
+      }
+    }
+    if (particleArray.length > 0) {
+      window.requestAnimationFrame(animate);
+    } else return;
+  }
+
+  function handleClick() {
+    timestamp.current = -1;
+    emitted.current = 0;
+    animate();
   }
 
   useEffect(() => {
     setup();
-    draw();
-  });
+  }, []);
 
-  return <canvas id="canvas" h={800} w={1200} style={{ zIndex: -5 }}></canvas>;
+  return (
+    <div>
+      <canvas
+        className={styles.canvas}
+        id="canvas"
+        height={800}
+        width={1200}
+        style={{ zIndex: 50 }}
+      ></canvas>
+      <Image
+        className={styles.imageFive}
+        onClick={handleClick}
+        src="/top_circle.png"
+        alt="abstract-shape"
+        width={200}
+        height={200}
+        style={{
+          top: 50,
+          left: w - 180,
+        }}
+      ></Image>
+    </div>
+  );
 }
