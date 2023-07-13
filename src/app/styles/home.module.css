@@ -1,17 +1,41 @@
-.videos {
+.videos,
+.images {
   position: absolute;
   width: 100vw;
   height: auto;
 }
 
-.videos:first-child {
-  top: 0;
+.videos {
   z-index: -15;
 }
 
+.videos:first-child {
+  top: 0;
+}
+
 .videos:last-of-type {
-  top: 100vh;
-  z-index: -15;
+  top: 120vh;
+}
+
+.images {
+  z-index: -10;
+}
+
+.imageOne {
+  composes: images;
+  top: -50vh;
+}
+
+.imageTwo {
+  composes: images;
+  top: 47vh;
+}
+
+.imageThree {
+  composes: images;
+  bottom: -126vh;
+  right: 0;
+  width: 25vw;
 }
 
 .article {

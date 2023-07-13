@@ -1,6 +1,6 @@
 :root {
   --black: #1d1c1c;
-  --bg: #fff5f5;
+  --bg: #ffebeb;
   --green: #669966;
   --dark-green: #003333;
   --red: #d01d20;
@@ -31,16 +31,29 @@ h1 {
   font-weight: 200;
   font-size: 5em;
   text-align: center;
+  display: none;
 }
 
 h3 {
+  color: var(--text);
+  font-family: ode, sans-serif;
+  font-style: normal;
+  font-weight: 200;
   text-align: center;
+  /* text-decoration: underline; */
+  font-size: 2.5em;
+}
+
+h4 {
   text-decoration: underline;
 }
 
 a,
 a:visited {
   color: var(--text);
+  font-family: ode, sans-serif;
+  font-style: normal;
+  font-weight: 200;
   text-decoration: none;
 }
 

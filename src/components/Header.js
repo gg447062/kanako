@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <nav className={styles.nav}>
       <Link href={'/'}>
-        <Image src={'/logo.png'} alt="logo" width={150} height={150}></Image>
+        <Image src={'/logo.png'} alt="logo" width={80} height={80}></Image>
       </Link>
       <div className={styles.linkContainer}>
         <Link className={styles.links} href={'/work'}>

@@ -10,21 +10,21 @@ export default function Contact() {
       <section className={styles.section}>
         <h3>Mailing List</h3>
         <div className={styles.container}>
-          <label className={styles.label} htmlFor="email">
-            email
-          </label>
           <input
             className={styles.input}
             id="email"
             name="email"
             type="email"
+            placeholder="email"
           ></input>
         </div>
         <div className={styles.container}>
-          <label className={styles.label} htmlFor="snail">
-            snail mail
-          </label>
-          <input className={styles.input} id="snail" name="snail"></input>
+          <input
+            className={styles.input}
+            id="snail"
+            name="snail"
+            placeholder="snail mail"
+          ></input>
         </div>
         <div className={styles.container}>
           <input className={styles.button} type="submit"></input>
