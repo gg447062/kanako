@@ -26,7 +26,7 @@ export default function Overlay() {
       ></Image>
       <Image
         className={styles.imageFour}
-        src="/bottom_circle.png"
+        src="https://res.cloudinary.com/dletnd7ha/image/upload/v1689280897/bottom_circle_ygoscu.png"
         alt="abstract-shape"
         width={1200}
         height={600}

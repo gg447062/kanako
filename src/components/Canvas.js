@@ -64,7 +64,8 @@ export default function Canvas() {
     _canvas.height = window.innerHeight;
     _canvas.width = window.innerWidth;
     const _img = document.createElement('img');
-    _img.src = '/tear2.png';
+    _img.src =
+      'https://res.cloudinary.com/dletnd7ha/image/upload/v1689280897/tear2_anno0n.png';
     setImg(_img);
     setHeight(window.innerHeight);
     setWidth(window.innerWidth);
@@ -138,7 +139,7 @@ export default function Canvas() {
       <Image
         className={styles.imageFive}
         onClick={handleClick}
-        src="/top_circle.png"
+        src="https://res.cloudinary.com/dletnd7ha/image/upload/v1689280897/top_circle_qfbuoz.png"
         alt="abstract-shape"
         width={200}
         height={200}
