@@ -1,5 +1,6 @@
 import Canvas from '@/components/Canvas';
 import styles from './styles/home.module.css';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -22,7 +23,27 @@ export default function Home() {
         width={1200}
         height={800}
       ></video>
-      {/* <Canvas /> */}
+      <Image
+        className={styles.imageOne}
+        src="/topp.png"
+        alt="abstract-shape"
+        width={1200}
+        height={600}
+      ></Image>
+      <Image
+        className={styles.imageTwo}
+        src="/_middle.png"
+        alt="abstract-shape"
+        width={1200}
+        height={600}
+      ></Image>
+      <Image
+        className={styles.imageThree}
+        src="/_bottom.png"
+        alt="abstract-shape"
+        width={1200}
+        height={600}
+      ></Image>
     </article>
   );
 }

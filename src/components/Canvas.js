@@ -2,23 +2,24 @@
 import { useEffect, useState } from 'react';
 
 export default function Canvas() {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [w, setWidth] = useState(1200);
+  const [h, setHeight] = useState(800);
+  const [canvas, setCanvas] = useState();
 
   function setup() {
-    const canvas = document.getElementById('canvas');
+    const _canvas = document.getElementById('canvas');
     const video = document.querySelector('video');
     const offset = video.clientHeight - window.innerHeight;
-    canvas.height = window.innerHeight * 2 + offset;
-    canvas.width = window.innerWidth;
+    _canvas.height = window.innerHeight * 2 + offset;
+    _canvas.width = window.innerWidth;
 
-    // setHeight(video.clientHeight);
     setHeight(window.innerHeight + offset);
     setWidth(window.innerWidth);
+    setCanvas(_canvas);
   }
 
   function draw() {
-    const canvas = document.getElementById('canvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     ctx.fillStyle = '#669966';
     ctx.fillStyle = '#99cc99';
@@ -26,48 +27,47 @@ export default function Canvas() {
     // top shape
     ctx.beginPath();
     ctx.moveTo(0, 0);
-    ctx.lineTo(width, 0);
-    ctx.lineTo(width, height / 2);
-    ctx.lineTo(width * 0.85, height / 2);
-    ctx.quadraticCurveTo(
-      width * 0.82,
-      height * 0.35,
-      width * 0.75,
-      height * 0.45
+    ctx.lineTo(w, 0);
+    ctx.lineTo(w, h * 0.5);
+    ctx.lineTo(w * 0.88, h * 0.5);
+    ctx.bezierCurveTo(
+      //right
+      w * 0.86,
+      h * 0.44,
+      //left
+      w * 0.82,
+      h * 0.38,
+      w * 0.78,
+      h * 0.46
     );
-    ctx.quadraticCurveTo(width * 0.7, height * 0.3, width * 0.6, height * 0.5);
-    ctx.lineTo(width * 0.4, height * 0.5);
-    ctx.quadraticCurveTo(width * 0.3, height * 0.2, width * 0.2, height * 0.5);
-    ctx.lineTo(0, height * 0.5);
+    ctx.bezierCurveTo(w * 0.74, h * 0.4, w * 0.68, h * 0.4, w * 0.68, h * 0.5);
+    ctx.lineTo(w * 0.4, h * 0.5);
+    ctx.bezierCurveTo(w * 0.38, h * 0.32, w * 0.22, h * 0.32, w * 0.2, h * 0.5);
+    ctx.lineTo(0, h * 0.5);
     ctx.fill();
 
     //bottom shape
     ctx.beginPath();
-    ctx.moveTo(0, height * 0.7);
-    ctx.lineTo(width * 0.16, height * 0.7);
-    ctx.quadraticCurveTo(width * 0.3, height, width * 0.34, height * 0.7);
-    ctx.quadraticCurveTo(
-      width * 0.4,
-      height * 0.8,
-      width * 0.42,
-      height * 0.64
-    );
-    ctx.lineTo(width * 0.6, height * 0.6);
-    ctx.quadraticCurveTo(width * 0.65, height * 0.8, width * 0.7, height * 0.6);
-    ctx.quadraticCurveTo(width * 0.75, height * 0.8, width * 0.8, height * 0.6);
-    ctx.lineTo(width, height * 0.5);
-    ctx.lineTo(width, height);
-    ctx.quadraticCurveTo(width * 0.85, height * 1.5, width * 0.6, height * 1.1);
-    ctx.quadraticCurveTo(width * 0.38, height * 2, width * 0.04, height * 1.2);
-    ctx.lineTo(0, height * 1.24);
+    ctx.moveTo(0, h * 0.7);
+    ctx.lineTo(w * 0.16, h * 0.7);
+    ctx.quadraticCurveTo(w * 0.3, h, w * 0.34, h * 0.7);
+    ctx.quadraticCurveTo(w * 0.4, h * 0.8, w * 0.42, h * 0.64);
+    ctx.lineTo(w * 0.6, h * 0.6);
+    ctx.quadraticCurveTo(w * 0.65, h * 0.8, w * 0.7, h * 0.6);
+    ctx.quadraticCurveTo(w * 0.75, h * 0.8, w * 0.8, h * 0.6);
+    ctx.lineTo(w, h * 0.5);
+    ctx.lineTo(w, h);
+    ctx.quadraticCurveTo(w * 0.85, h * 1.5, w * 0.6, h * 1.1);
+    ctx.quadraticCurveTo(w * 0.38, h * 2, w * 0.04, h * 1.2);
+    ctx.lineTo(0, h * 1.24);
     ctx.fill();
 
     // bottom right
 
     ctx.beginPath();
-    ctx.moveTo(width, height * 2);
-    ctx.lineTo(width * 0.7, height * 2);
-    ctx.quadraticCurveTo(width * 0.74, height * 1.4, width, height * 1.6);
+    ctx.moveTo(w, h * 2);
+    ctx.lineTo(w * 0.7, h * 2);
+    ctx.quadraticCurveTo(w * 0.74, h * 1.4, w, h * 1.6);
     ctx.fill();
   }
 
@@ -75,12 +75,6 @@ export default function Canvas() {
     setup();
     draw();
   });
-  return (
-    <canvas
-      id="canvas"
-      height={800}
-      width={1200}
-      style={{ zIndex: -5 }}
-    ></canvas>
-  );
+
+  return <canvas id="canvas" h={800} w={1200} style={{ zIndex: -5 }}></canvas>;
 }
