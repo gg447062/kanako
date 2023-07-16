@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5em 0;
+}
+
+.image {
+  width: 50vw;
+  height: auto;
+}
+
+.info {
+  width: 50vw;
+}
