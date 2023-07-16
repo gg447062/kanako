@@ -1,52 +1,27 @@
-.nav {
+.article {
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 1em;
 }
 
-.navItem:hover {
-  text-decoration: underline;
+.container {
+  columns: 3;
+  margin: 6em 0;
 }
 
-.navSelect {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.feature {
-  display: flex;
-  justify-content: center;
-}
-
-.section {
-  margin: 3em 0;
+.card {
+  height: min-content;
+  padding: 0.5em;
 }
 
 .image {
-  width: calc(100vw / 3);
+  width: calc(100vw / 3.3);
   height: auto;
 }
 
 .title {
-  width: calc(100vw / 3);
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.list {
-  display: flex;
-  gap: 2em;
-  width: 100%;
-  overflow-x: scroll;
-}
-
-.actingList {
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
 }
