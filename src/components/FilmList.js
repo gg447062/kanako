@@ -16,16 +16,15 @@ export default function FilmList() {
     <div className={styles.container}>
       {noActing.map((film, i) => {
         return (
-          <div className={styles.card} key={i}>
-            <Image
-              className={styles.image}
-              src={film.Image}
-              alt="thumbnail"
-              width={1920}
-              height={1080}
-              onClick={() => handleClick(film.Title)}
-            />
-          </div>
+          <Image
+            key={i}
+            className={styles.image}
+            src={film.Image}
+            alt="thumbnail"
+            width={1920}
+            height={1080}
+            onClick={() => handleClick(film.Title)}
+          />
         );
       })}
     </div>

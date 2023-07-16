@@ -1,29 +1,27 @@
 .nav {
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
   display: flex;
+  top: 0;
+  padding-top: 1em;
   justify-content: center;
-  text-transform: lowercase;
 }
 
 .linkContainer {
-  height: 98%;
-  margin: 3em;
+  background-color: greenyellow;
   display: flex;
-  gap: 1em;
   align-items: center;
 }
 
-.navImage {
-  position: absolute;
-  top: 3em;
-  left: 3em;
-  z-index: 100;
-  transition: all 0.5s ease-in;
-}
-
 .links {
-  font-size: 3em;
+  font-size: 2em;
+  padding: 0.1em 0.25em;
+  transition: all 0.25s ease;
+  text-transform: lowercase;
 }
 
 .links:hover {
-  text-decoration: underline;
+  background-color: var(--text);
+  color: greenyellow;
 }

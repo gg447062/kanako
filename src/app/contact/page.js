@@ -2,13 +2,12 @@ import styles from '../styles/contact.module.css';
 export default function Contact() {
   return (
     <article className={styles.article}>
-      <h1>Contact</h1>
       <section className={styles.section}>
-        <h3>Email</h3>
-        <p>kanakobird@gmail.com</p>
+        <h3 className={styles.h3}>Email</h3>
+        <p>Kanakopooknyw@protonmail.com</p>
       </section>
       <section className={styles.section}>
-        <h3>Mailing List</h3>
+        <h3 className={styles.h3}>Mailing List</h3>
         <div className={styles.container}>
           <input
             className={styles.input}

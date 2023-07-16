@@ -7,17 +7,22 @@
   --text: var(--dark-green);
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   height: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+
   font-family: ff-nexus-typewriter, sans-serif;
   font-style: normal;
   font-weight: 200;
   background-color: var(--bg);
   color: var(--text);
-  box-sizing: border-box;
+
   overflow-x: hidden;
 }
 
@@ -55,4 +60,13 @@ a:visited {
   font-style: normal;
   font-weight: 200;
   text-decoration: none;
+}
+
+a::selection,
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection {
+  background: greenyellow;
 }

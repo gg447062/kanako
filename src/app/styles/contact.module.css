@@ -1,11 +1,10 @@
 .article {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.section:last-of-type {
-  margin: 3em 0;
+  gap: 12em;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16em 0;
 }
 
 .container {
@@ -34,4 +33,8 @@
 .button:hover {
   background-color: var(--text);
   color: var(--bg);
+}
+
+.h3 {
+  margin-bottom: 1em;
 }

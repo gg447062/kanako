@@ -1,64 +1,7 @@
-.images {
-  position: absolute;
-  width: 100vw;
-  height: auto;
-}
-
 .videos {
   width: 100vw;
   height: auto;
   padding: 0;
-}
-
-.videosAbsolute {
-  composes: videos;
-  position: absolute;
-  z-index: -15;
-}
-
-.videosAbsolute:first-child {
-  top: 0;
-}
-
-.videosAbsolute:last-of-type {
-  top: 120vh;
-}
-
-.images {
-  z-index: 10;
-}
-
-.imageOne {
-  composes: images;
-  top: -50vh;
-  left: 0;
-}
-
-.imageTwo {
-  composes: images;
-  top: 47vh;
-  left: 0;
-}
-
-.imageThree {
-  composes: images;
-  bottom: -126vh;
-  right: 0;
-  width: 25vw;
-}
-
-.imageFour {
-  composes: images;
-  top: -8vw;
-  right: -8vw;
-  width: 25vw;
-}
-
-.imageFive {
-  composes: images;
-  width: 150px;
-  height: auto;
-  z-index: 51;
 }
 
 .article {
@@ -69,21 +12,13 @@
   max-width: 100%;
 }
 
-.canvas {
-  z-index: 50;
-  pointer-events: none;
-}
-
-.button {
-  position: absolute;
-  top: 0;
-  left: 50vw;
+.image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: greenyellow;
+  padding: 1em;
   z-index: 1000;
-  background-color: var(--text);
-  color: var(--bg);
-  border: 1px solid var(--text);
-  padding: 0.5em;
-  font-family: ff-nexus-typewriter, sans-serif;
-  font-style: normal;
-  font-weight: 200;
+  transition: all 0.5s ease-in-out;
 }
