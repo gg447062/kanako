@@ -1,5 +1,7 @@
 'use client';
 import styles from './styles/home.module.css';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -26,6 +28,17 @@ export default function Home() {
         width={1200}
         height={800}
       ></video>
+      <Link href={'/work'}>
+        <Image
+          src={
+            'https://res.cloudinary.com/dletnd7ha/image/upload/v1689270475/kanako-site/logo_vvzzmw.png'
+          }
+          alt="logo"
+          width={200}
+          height={200}
+          className={styles.image}
+        ></Image>
+      </Link>
     </article>
   );
 }
