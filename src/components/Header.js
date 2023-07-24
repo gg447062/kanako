@@ -9,22 +9,26 @@ export default function Header() {
 
   return (
     <nav className={styles.nav}>
-      {pathname !== '/' && (
-        <div className={styles.linkContainer}>
-          <Link className={styles.links} href={'/work'}>
-            Work
-          </Link>
-          <Link className={styles.links} href={'/screenings'}>
-            Screenings
-          </Link>
-          <Link className={styles.links} href={'/about'}>
-            About
-          </Link>
-          <Link className={styles.links} href={'/contact'}>
-            Contact
-          </Link>
-        </div>
-      )}
+      {/* <div className={styles.linkContainer}> */}
+      <Link className={styles.links} href={'/#work'}>
+        {/* <Image
+          src="https://res.cloudinary.com/dletnd7ha/image/upload/v1689270475/kanako-site/logo_vvzzmw.png"
+          height={30}
+          width={30}
+          alt="seal"
+        /> */}
+        Work
+      </Link>
+      <Link className={styles.links} href={'/screenings'}>
+        Screenings
+      </Link>
+      <Link className={styles.links} href={'/about'}>
+        About
+      </Link>
+      <Link className={styles.links} href={'/contact'}>
+        Contact
+      </Link>
+      {/* </div> */}
     </nav>
   );
 }

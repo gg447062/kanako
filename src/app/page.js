@@ -1,12 +1,22 @@
 'use client';
 import styles from './styles/home.module.css';
-import Link from 'next/link';
-import Image from 'next/image';
+import FilmList from '@/components/FilmList';
+import { FilmLinks } from '@/components/FilmList';
 
 export default function Home() {
   return (
     <article className={styles.article}>
-      <video
+      <section className={styles.section}>
+        <h1>Kanako Pooknyw</h1>
+        <h3>Director</h3>
+      </section>
+      <section className={styles.links}>
+        <FilmLinks />
+      </section>
+      <section id="work">
+        <FilmList></FilmList>
+      </section>
+      {/* <video
         className={styles.videos}
         src={
           'https://res.cloudinary.com/dletnd7ha/video/upload/v1689270479/kanako-site/chantal_fihnbe.mp4'
@@ -16,8 +26,8 @@ export default function Home() {
         loop
         width={1200}
         height={800}
-      ></video>
-      <video
+      ></video> */}
+      {/* <video
         className={styles.videos}
         src={
           'https://res.cloudinary.com/dletnd7ha/video/upload/v1689270498/kanako-site/voyeur_aa5wgm.mp4'
@@ -27,18 +37,7 @@ export default function Home() {
         loop
         width={1200}
         height={800}
-      ></video>
-      <Link href={'/work'}>
-        <Image
-          src={
-            'https://res.cloudinary.com/dletnd7ha/image/upload/v1689270475/kanako-site/logo_vvzzmw.png'
-          }
-          alt="logo"
-          width={200}
-          height={200}
-          className={styles.image}
-        ></Image>
-      </Link>
+      ></video> */}
     </article>
   );
 }
